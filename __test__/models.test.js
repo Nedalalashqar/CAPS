@@ -18,27 +18,15 @@ describe('caps test', () => {
     })
     it('transit', () => {
         const caps = require('../models/caps');
-        caps.emit('transit', payload)
-        expect(caps.emit('transit', payload)).toEqual(true)
-    })
-    it('transit', () => {
-        const caps = require('../models/caps');
         caps.emit('dileverd', payload)
         expect(caps.emit('dileverd', payload)).toEqual(true)
     })
-})
-
-describe('driv test', () => {
     it('transit', () => {
-        const driver = require('../models/driver');
-        driver.emit('transit', payload)
-        expect(driver.emit('transit', payload)).toEqual(true)
+        const caps = require('../models/caps');
+        caps.emit('transit', payload)
+        expect(caps.emit('transit', payload)).toEqual(true)
     })
-    it('transit', () => {
-        const driver = require('../models/driver');
-        driver.emit('driverTransit', payload)
-        expect(driver.emit('driverTransit', payload)).toEqual(true)
-    })
+ 
 })
 
 describe('driver test', () => {
@@ -48,3 +36,17 @@ describe('driver test', () => {
         expect(vendor.emit('venDileverd', payload)).toEqual(true)
     })
 })
+
+describe('driv test', () => {
+    it('transit', () => {
+        const driver = require('../models/driver');
+        driver.emit('driverTransit', payload)
+        expect(driver.emit('driverTransit', payload)).toEqual(true)
+    })
+    it('transit', () => {
+        const driver = require('../models/driver');
+        driver.emit('transit', payload)
+        expect(driver.emit('transit', payload)).toEqual(true)
+    })
+})
+
